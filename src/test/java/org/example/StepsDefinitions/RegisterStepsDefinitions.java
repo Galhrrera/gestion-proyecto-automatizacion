@@ -27,6 +27,8 @@ public class RegisterStepsDefinitions {
         driver.manage().window().maximize();
         driver.navigate().to("https://petstore.octoperf.com/actions/Catalog.action");
 
+
+
     }
 
     @Given("The user selects the login option")
@@ -38,6 +40,8 @@ public class RegisterStepsDefinitions {
         WebElement loginLink = driver.findElement(loginLinkXpath);
         loginLink.click();
 
+
+
     }
 
     @When("The user clicks {string}")
@@ -48,6 +52,8 @@ public class RegisterStepsDefinitions {
 
         WebElement loginLink = driver.findElement(loginLinkXpath);
         loginLink.click();
+
+
     }
 
     @When("The user enters User ID as {string}")
@@ -56,14 +62,18 @@ public class RegisterStepsDefinitions {
         By userIdInputName = By.name("username");
         WebElement userIdInput = driver.findElement(userIdInputName);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the password {string}")
-    public void the_user_enters_the_password(String string) {
+    public void the_user_enters_the_password(String string){
         System.out.println("en The user enters the password "+string);
         By userPassword = By.name("password");
         WebElement userIdInput = driver.findElement(userPassword);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user re-enters the password {string}")
@@ -72,6 +82,8 @@ public class RegisterStepsDefinitions {
         By userPassword = By.name("repeatedPassword");
         WebElement userIdInput = driver.findElement(userPassword);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the first name {string}")
@@ -81,6 +93,8 @@ public class RegisterStepsDefinitions {
         By userFirstName = By.name("account.firstName");
         WebElement userIdInput = driver.findElement(userFirstName);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the last name {string}")
@@ -90,14 +104,18 @@ public class RegisterStepsDefinitions {
         By userLastName = By.name("account.lastName");
         WebElement userIdInput = driver.findElement(userLastName);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the email {string}")
-    public void the_user_enters_the_email(String string) {
+    public void the_user_enters_the_email(String string){
         System.out.println("en The user enters the email "+string);
         By userEmail = By.name("account.email");
         WebElement userIdInput = driver.findElement(userEmail);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the phone {string}")
@@ -106,6 +124,8 @@ public class RegisterStepsDefinitions {
         By userPhone = By.name("account.phone");
         WebElement userIdInput = driver.findElement(userPhone);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters address line  {string}")
@@ -114,6 +134,8 @@ public class RegisterStepsDefinitions {
         By userAddress = By.name("account.address1");
         WebElement userIdInput = driver.findElement(userAddress);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the city {string}")
@@ -122,6 +144,8 @@ public class RegisterStepsDefinitions {
         By userCity = By.name("account.city");
         WebElement userIdInput = driver.findElement(userCity);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the state {string}")
@@ -130,6 +154,8 @@ public class RegisterStepsDefinitions {
         By userState = By.name("account.state");
         WebElement userIdInput = driver.findElement(userState);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the ZIP code {string}")
@@ -138,14 +164,18 @@ public class RegisterStepsDefinitions {
         By userZip= By.name("account.zip");
         WebElement userIdInput = driver.findElement(userZip);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user enters the country {string}")
-    public void the_user_enters_the_country(String string) {
+    public void the_user_enters_the_country(String string){
         System.out.println("en The user enters the country "+string);
         By userCountry= By.name("account.country");
         WebElement userIdInput = driver.findElement(userCountry);
         userIdInput.sendKeys(string);
+
+
     }
 
     @When("The user clicks on Save Account Information")
@@ -156,6 +186,8 @@ public class RegisterStepsDefinitions {
 
         WebElement SaveAccountBtn = driver.findElement(SaveAccountBtnElement);
         SaveAccountBtn.click();
+
+
     }
 
     @Then("The registration is successful and You are redirected to the main page")
@@ -169,9 +201,11 @@ public class RegisterStepsDefinitions {
 
         Assert.assertNotNull("El elemento con ID 'MainImageContent' (la imagen central) no está presente", mainImageContent);
 
+        if (driver!=null){
+            driver.quit();
+        }
+
 
     }
-
-
 
 }
